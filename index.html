@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!--
+ - File              : index.html
+ - Author            : none
+ - Date              : 06.03.2022
+ - Last Modified Date: 17.03.2022
+ - Last Modified By  : none <none>
+-->
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WeSinger: Data-augmented Singing Voice Synthesis with Auxiliary Losses
+	</title>
+</head>
+<body>
+
+<article>
+    <header>
+        <h1>Singing demos for paper 《WeSinger: Data-augmented Singing Voice Synthesis with Auxiliary Losses》</h1>
+    </header>
+</article>
+<hr>
+
+<div><h3><b>Paper</b> </h3>
+<div> <blockquote> todo [<a href="https://github.com/zzw922cn/WeSinger">Here</a>]</blockquote> </div>
+<div><h3><b>Authors</b> </h3>
+<blockquote> <div>to be added soon.</div> </blockquote>
+<div><h3><b>Abstract</b> </h3>
+<blockquote>
+<div> to be added soon.</div>
+</blockquote>
+</div>
+<br/>
+
+<hr>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+</style>
+
+<h3 id="samples1">1. Selected test samples from WeSinger on the internal professional female singer's corpus</h3>
+
+<blockquote>
+
+<!-- part1 -->
+
+<table class="tg">
+  <tr>
+    <th class="tg-lboi">lyrics</th>
+    <th class="tg-lboi">Recording</th>
+  </tr>
+
+  <tr>
+      <td class="tg-lboi">后来 我总算学会了如何去爱</br> 可惜你早已远去 消失在人海 </br>后来 终于在眼泪中明白 </br>有些人 一旦错过就不在</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/model_13_slice01.wav">
+		</audio>
+	</td>
+  </tr>
+</table>
+
+<h3 style="text-align:left">Singing voices synthesized with ground-truth durations.</h3>
+<table class="tg">
+  <tr>
+    <th class="tg-lboi">lyrics</th>
+    <th class="tg-lboi">WeSinger</th>
+    <th class="tg-lboi">VS-augmented WeSinger</th>
+    <th class="tg-lboi">WeSinger with multi-singer pre-training</th>
+    <th class="tg-lboi">WeSinger with VS-augmented multi-singer pre-training</th>
+  </tr>
+
+  <tr>
+      <td class="tg-lboi">后来 我总算学会了如何去爱</br> 可惜你早已远去 消失在人海 </br>后来 终于在眼泪中明白 </br>有些人 一旦错过就不在</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/model_01_slice01.wav">
+		</audio>
+	</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/model_09_slice01.wav">
+		</audio>
+	</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/model_10_slice01.wav">
+		</audio>
+	</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/model_12_slice01.wav">
+		</audio>
+	</td>
+  </tr>
+
+
+
+</table>
+
+<h3 style="text-align:left">Singing voices synthesized with predicted durations.</h3>
+<table class="tg">
+  <tr>
+    <th class="tg-lboi">lyrics</th>
+    <th class="tg-lboi">WeSinger</th>
+    <th class="tg-lboi">VS-augmented WeSinger</th>
+    <th class="tg-lboi">WeSinger with multi-singer pre-training</th>
+    <th class="tg-lboi">WeSinger with VS-augmented multi-singer pre-training</th>
+  </tr>
+
+  <tr>
+      <td class="tg-lboi">后来 我总算学会了如何去爱</br> 可惜你早已远去 消失在人海 </br>后来 终于在眼泪中明白 </br>有些人 一旦错过就不在</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/model_07_slice01.wav">
+		</audio>
+	</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/model_04_slice01.wav">
+		</audio>
+	</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/model_05_slice01.wav">
+		</audio>
+	</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/model_02_slice01.wav">
+		</audio>
+	</td>
+  </tr>
+</table>
+
+
+<h3 style="text-align:left">Singing voices synthesized with predicted durations with post-processing.</h3>
+<table class="tg">
+  <tr>
+    <th class="tg-lboi">lyrics</th>
+    <th class="tg-lboi">WeSinger</th>
+    <th class="tg-lboi">VS-augmented WeSinger</th>
+    <th class="tg-lboi">WeSinger with multi-singer pre-training</th>
+    <th class="tg-lboi">WeSinger with VS-augmented multi-singer pre-training</th>
+  </tr>
+
+  <tr>
+      <td class="tg-lboi">后来 我总算学会了如何去爱</br> 可惜你早已远去 消失在人海 </br>后来 终于在眼泪中明白 </br>有些人 一旦错过就不在</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/single_weighted_refine1.wav">
+		</audio>
+	</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/single_weighted_split_refine1.wav">
+		</audio>
+	</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/avg_weighted_adapt_refine1.wav">
+		</audio>
+	</td>
+
+    <td class="tg-lboi">
+		<audio controls style="width: 140px;">
+			<source src="wavs/mmf1/avg_weighted_split_adapt_refine1.wav">
+		</audio>
+	</td>
+  </tr>
+
+
+</table>
+
+
+    <h3 style="text-align:left">《年轮》</h3>
+    <table class="tg">
+      <tr>
+        <th class="tg-lboi">lyrics</th>
+        <th class="tg-lboi">WeSinger with VS-augmented multi-singer pre-training</th>
+      </tr>
+
+    <tr>
+        <td class="tg-lboi">
+            圆圈勾勒成指纹 印在我的嘴唇 回忆苦涩的吻痕 是树根</br>
+            春去秋来的茂盛 却遮住了黄昏 寒夜剩我一个人 等清晨</br>
+            世间最毒的仇恨 是有缘却无分 可惜你从未心疼 我的笨</br>
+            荒草丛生的青春 倒也过的安稳 代替你陪着我的 是年轮</br>
+            数着一圈圈年轮 我认真 将心事都封存 密密麻麻是我的自尊</br>
+            修改一次次离分 我承认 曾幻想过永恒 可惜从没人陪我演这剧本</br>
+            可惜从没人陪我演这 剧 本
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/mmf1/nl_wesinger_finetune.wav">
+            </audio>
+        </td>
+    </tr>
+    </table>
+
+
+    <h3 style="text-align:left">《红色高跟鞋》</h3>
+    <table class="tg">
+      <tr>
+        <th class="tg-lboi">lyrics</th>
+        <th class="tg-lboi">WeSinger with VS-augmented multi-singer pre-training</th>
+      </tr>
+
+    <tr>
+        <td class="tg-lboi">
+            只凭直觉</br>
+            你像窝在被子里的舒服</br>
+            却又像风 捉摸不住</br>
+            像手腕上散发的香水味</br>
+            像爱不释手的 红色高跟鞋</br>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/mmf1/hsggx_wesinger_finetune.wav">
+            </audio>
+        </td>
+    </tr>
+    </table>
+
+</blockquote>
+
+
+
+<h3 id="samples2">2. Selected samples from CpopSinger and WeSinger on the public Opencpop training set</h3>
+<blockquote>
+    <table class="tg">
+      <tr>
+        <th class="tg-lboi">lyrics</th>
+        <th class="tg-lboi">CpopSinger</th>
+        <th class="tg-lboi">WeSinger</th>
+      </tr>
+
+    <tr>
+        <td class="tg-lboi">
+            雨淋湿了天空 灰的更讲究 你说你不懂为何在这时牵手</br>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/comparison/model07_2044_0.wav">
+            </audio>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/comparison/model05_2044_0.wav">
+            </audio>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="tg-lboi">
+            能不能给我一首歌的时间 把故事听到最后才说再见</br>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/comparison/model07_2044_3.wav">
+            </audio>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/comparison/model05_2044_3.wav">
+            </audio>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="tg-lboi">
+            经常会想 长大多好 有些事情却只能想象</br>
+            想说就说 想做就做 为了明天的自己鼓掌</br>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/comparison/model07_2086_0.wav">
+            </audio>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/comparison/model05_2086_0.wav">
+            </audio>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="tg-lboi">
+            男子汉 没有什么输不起 正太修炼成功的秘籍</br>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/comparison/model07_2086_4.wav">
+            </audio>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/comparison/model05_2086_4.wav">
+            </audio>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="tg-lboi">
+            幸福也可以 很安静 我付出一直 很小心</br>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/comparison/model07_2092_1.wav">
+            </audio>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/comparison/model05_2092_1.wav">
+            </audio>
+        </td>
+    </tr>
+
+    </table>
+</blockquote>
+
+<h3 id="samples2">3. Selected test samples from WeSinger on the public Opencpop corpus</h3>
+<blockquote>
+
+
+    <h3 style="text-align:left">《给我一首歌的时间》</h3>
+    <table class="tg">
+      <tr>
+        <th class="tg-lboi">lyrics</th>
+        <th class="tg-lboi">WeSinger with VS-augmented multi-singer pre-training</th>
+      </tr>
+
+    <tr>
+        <td class="tg-lboi">
+            能不能给我一首歌的时间 紧紧的把那拥抱变成永远</br>
+            在我的怀里你不用害怕失眠 如果你想忘记我也能失忆</br>
+            能不能给我一首歌的时间 喔把故事听到最后再说再见</br>
+            你送我的眼泪 让它留在雨天 喔越过你划的线我定了勇气</br> 
+            的终点</br>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/gwysgdsj_wesinger_finetune.wav">
+            </audio>
+        </td>
+    </tr>
+    </table>
+
+
+    <h3 style="text-align:left">《青春修炼手册》</h3>
+    <table class="tg">
+      <tr>
+        <th class="tg-lboi">lyrics</th>
+        <th class="tg-lboi">WeSinger with VS-augmented multi-singer pre-training</th>
+      </tr>
+
+    <tr>
+        <td class="tg-lboi">
+            这世界 的太阳 因为自信才能把我照亮 </br>
+            这舞台 的中央 有我才闪亮 有我才能发着光</br>
+            跟着我 左手 右手  一个慢动作  右手 左手慢动作重播</br>
+            这首歌 给你快乐 你有没有爱上我</br> 
+            跟着我 鼻子眼睛 动一动耳朵</br>
+            装乖 耍帅 换不停风格</br>
+            青春有太多 未知的猜测 成长的烦恼算什么</br>
+            经常会想 长大多好 有些事情却只能想象</br>
+            想说就说 想做就做 为了明天的自己鼓掌</br>
+            这世界 的太阳 因为自信才能把我照亮</br>
+            这舞台 的中央 有我才闪亮 有我才能发着光</br>
+        </td>
+
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/opencpop/qcxlsc_wesinger_finetune.wav">
+            </audio>
+        </td>
+    </tr>
+    </table>
+
+</blockquote>
+
+<h3 id="samples3">4. Selected synthesized songs from WeSinger</h3>
+<blockquote>
+    <h3 style="text-align:left">《莫斯科没有眼泪》</h3>
+    <table>
+    <tr>
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/songs_bgm/mskmyyl_bgm.wav">
+            </audio>
+        </td>
+    </tr>
+    </table>
+    <h3 style="text-align:left">《失恋阵线联盟》</h3>
+    <table>
+    <tr>
+        <td class="tg-lboi">
+            <audio controls style="width: 140px;">
+                <source src="wavs/songs_bgm/slzxlm_bgm.wav">
+            </audio>
+        </td>
+    </tr>
+    </table>
+
+</blockquote>
+
+<h3> <br/></h3>
+<hr>
